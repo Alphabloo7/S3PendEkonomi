@@ -1,0 +1,13 @@
+services:
+  web:
+    image: alphabloo7/s3-pend-ekonomi:latest
+    container_name: s3-pend-ekonomi-web
+    restart: always
+    ports:
+      - "8087:80" # Ubah port 8087 jika port tersebut sudah terpakai di server VPS Anda
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost/healthz"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
