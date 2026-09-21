@@ -1,0 +1,1188 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0074D6" />
+  <meta name="description" content="Program Studi S3 Pendidikan Ekonomi Pascasarjana FKIP Universitas Sebelas Maret (UNS) — Jalur masuk, kurikulum, dosen pakar, riset Scopus, dan pendaftaran." />
+  <title>S3 Pendidikan Ekonomi | Pascasarjana FKIP UNS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      /* Palet visual resmi portal UNS: blue–cyan gradient, yellow accent, dark footer */
+      --uns-blue:#0074D6;
+      --uns-blue-2:#009BDD;
+      --uns-blue-3:#005AA8;
+      --uns-cyan:#00A8E8;
+      --uns-yellow:#FFDE35;
+      --uns-yellow-2:#F5C91F;
+      --uns-teal:#047EA9;
+      --ink:#1A232E;
+      --muted:#5C6E82;
+      --line:#E2E9F0;
+      --soft:#F4F8FC;
+      --white:#FFFFFF;
+      --footer:#141A22;
+      --shadow:0 12px 32px rgba(0,73,132,.12);
+      --shadow-hover:0 20px 40px rgba(0,73,132,.18);
+      --max:1180px;
+      --radius:14px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Plus Jakarta Sans","Poppins","Segoe UI",Arial,sans-serif;
+      color:var(--ink);
+      background:#fff;
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    button,input{font:inherit}
+    .container{width:min(calc(100% - 36px),var(--max));margin-inline:auto}
+
+    /* --- UNS-style utility bar --- */
+    .utility{
+      background:#008BBE;
+      color:#fff;
+      font-size:11px;
+      font-weight:700;
+      border-bottom:1px solid rgba(255,255,255,.24);
+    }
+    .utility-inner{height:32px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .utility-left,.utility-right{display:flex;align-items:center;gap:18px;white-space:nowrap}
+    .utility a{opacity:.96;transition:.15s ease}.utility a:hover{opacity:.78}
+    .id-badge{display:inline-flex;align-items:center;gap:6px}
+    .id-dot{width:14px;height:9px;border-radius:1px;background:linear-gradient(#ef3340 0 50%,#fff 50%)}
+    .dikti-badge{background:rgba(255,255,255,.18);padding:2px 8px;border-radius:3px;font-size:10px;letter-spacing:.04em}
+
+    /* --- Main blue header --- */
+    .site-header{
+      background:linear-gradient(98deg,var(--uns-blue-2) 0%,var(--uns-blue) 72%);
+      color:#fff;
+      position:relative;
+      z-index:50;
+    }
+    .header-main{height:80px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:14px;min-width:0}
+    .logo-box{
+      width:52px;height:52px;border:2px solid rgba(255,255,255,.85);border-radius:50%;
+      display:grid;place-items:center;font-weight:900;font-size:16px;letter-spacing:-1px;flex:0 0 auto;
+      background:rgba(255,255,255,.1);
+      box-shadow:0 4px 12px rgba(0,0,0,.15);
+    }
+    .brand-copy{min-width:0}
+    .brand-copy strong{display:block;font-size:16px;line-height:1.15;letter-spacing:.01em;font-weight:800}
+    .brand-copy span{display:block;font-size:11px;opacity:.92;margin-top:3px}
+    .header-search{
+      min-width:260px;display:flex;height:36px;border-radius:4px;overflow:hidden;background:#fff;
+      box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);
+      cursor:pointer;
+    }
+    .header-search span{flex:1;color:#7B8791;font-size:11px;display:flex;align-items:center;padding:0 12px}
+    .header-search b{width:38px;display:grid;place-items:center;background:#0C8FC5;color:#fff;font-size:14px}
+
+    /* --- Program nav (Sticky & Responsive) --- */
+    .program-nav{
+      position:sticky;top:0;z-index:45;
+      background:#078AC8;color:#fff;
+      border-bottom:5px solid var(--uns-yellow);
+      box-shadow:0 6px 20px rgba(0,70,120,.14);
+    }
+    .program-nav-inner{
+      display:flex;align-items:center;justify-content:space-between;gap:20px;
+      min-height:50px;padding:6px 0;
+    }
+    .program-nav-top{display:flex;align-items:center;gap:14px}
+    .program-name{font-size:13px;font-weight:900;letter-spacing:.04em;white-space:nowrap;display:flex;align-items:center;gap:8px}
+    .program-name span{background:var(--uns-yellow);color:#142B3B;padding:2px 7px;border-radius:3px;font-size:10px;font-weight:900}
+    .program-menu{
+      display:flex;align-items:center;gap:22px;font-size:12px;font-weight:800;
+      white-space:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;
+      scrollbar-width:none;
+    }
+    .program-menu::-webkit-scrollbar{display:none}
+    .program-menu a{transition:.15s ease;color:#fff;opacity:.95}
+    .program-menu a:hover{color:var(--uns-yellow);opacity:1}
+    .nav-cta{padding:8px 16px;background:var(--uns-yellow);color:#183143;border-radius:4px;font-weight:900;font-size:12px;transition:.18s ease;white-space:nowrap}
+    .nav-cta:hover{background:#fff;color:var(--uns-blue);transform:translateY(-1px)}
+
+    /* --- Hero Section --- */
+    .hero{
+      position:relative;overflow:hidden;color:#fff;
+      background:
+        linear-gradient(90deg,rgba(0,105,196,.97),rgba(0,168,232,.85)),
+        radial-gradient(circle at 80% 20%,rgba(255,255,255,.28),transparent 35%);
+      min-height:510px;
+    }
+    .hero:before{
+      content:"";position:absolute;inset:0;opacity:.14;
+      background-image:
+        linear-gradient(rgba(255,255,255,.2) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.2) 1px,transparent 1px);
+      background-size:72px 72px;
+      mask-image:linear-gradient(90deg,#000,transparent 85%);
+    }
+    .hero:after{
+      content:"UNS";position:absolute;right:4%;bottom:-85px;font-size:270px;font-weight:950;
+      color:rgba(255,255,255,.05);line-height:1;letter-spacing:-.08em;pointer-events:none;
+    }
+    .hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:54px;padding:64px 0 72px}
+    .breadcrumbs{font-size:11px;font-weight:700;opacity:.9;margin-bottom:14px;letter-spacing:.02em}
+    .hero-kicker{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;color:var(--uns-yellow)}
+    .hero-kicker:before{content:"";width:34px;height:4px;background:var(--uns-yellow)}
+    .hero h1{font-size:clamp(36px,5.4vw,64px);line-height:1.06;margin:12px 0 18px;letter-spacing:-.03em;max-width:740px;font-weight:900}
+    .hero h1 span{color:var(--uns-yellow);text-shadow:0 4px 20px rgba(0,0,0,.15)}
+    .hero p{font-size:16px;max-width:670px;color:#EDF7FF;margin:0 0 28px;line-height:1.65}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 20px;border-radius:6px;font-weight:800;font-size:12.5px;border:1px solid transparent;transition:.18s ease;cursor:pointer}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,0,0,.18)}
+    .btn-yellow{background:var(--uns-yellow);color:#142B3B}
+    .btn-yellow:hover{background:#fff;color:var(--uns-blue)}
+    .btn-outline{border-color:rgba(255,255,255,.75);color:#fff;background:rgba(255,255,255,.08)}
+    .btn-outline:hover{background:#fff;color:var(--uns-blue)}
+    .btn-blue{background:var(--uns-blue);color:#fff}
+    .btn-blue:hover{background:var(--uns-blue-3)}
+
+    /* Hero Card (Floating Badge Box) */
+    .hero-card{
+      background:rgba(255,255,255,.98);color:var(--ink);border-radius:14px;padding:26px;
+      box-shadow:0 24px 60px rgba(0,57,105,.26);border-top:6px solid var(--uns-yellow);
+    }
+    .hero-card-label{font-size:11px;font-weight:900;color:var(--uns-teal);text-transform:uppercase;letter-spacing:.08em;display:flex;justify-content:space-between;align-items:center}
+    .hero-card-label .tag{background:#E0F2FE;color:#0369A1;padding:3px 8px;border-radius:4px;font-size:10px}
+    .hero-card h3{margin:8px 0 10px;font-size:24px;color:#087CAF;line-height:1.2;font-weight:800}
+    .hero-card p{color:var(--muted);font-size:12.5px;margin:0 0 18px;line-height:1.55}
+    .hero-mini-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+    .hero-mini{padding:12px 14px;background:#F1F7FB;border-radius:8px;border:1px solid #DCEBF3}
+    .hero-mini strong{display:block;color:var(--uns-blue);font-size:18px;font-weight:900;line-height:1.2}
+    .hero-mini span{font-size:10px;color:var(--muted);font-weight:700}
+    .accred{margin-top:14px;padding:11px 13px;border-radius:8px;background:#FFF9D8;border-left:4px solid var(--uns-yellow-2);font-size:11.5px;color:#554817;font-weight:800;display:flex;align-items:center;gap:8px}
+
+    /* --- Shared section components --- */
+    section{padding:74px 0}
+    .section-title{text-align:center;margin-bottom:40px}
+    .section-title.left{text-align:left}
+    .section-title h2{margin:0;color:var(--uns-teal);font-size:clamp(24px,3.1vw,38px);line-height:1.18;font-weight:800}
+    .title-line{width:76px;height:4px;background:var(--uns-yellow);margin:12px auto 0;border-radius:2px}
+    .left .title-line{margin-left:0}
+    .section-title p{max-width:740px;margin:14px auto 0;color:var(--muted);font-size:14.5px;line-height:1.6}
+    .left p{margin-left:0}
+
+    /* --- Promotion Highlights --- */
+    .highlights{background:#fff;padding:52px 0 20px}
+    .highlight-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+    .highlight{
+      border:1px solid var(--line);border-radius:10px;padding:20px 16px;background:#fff;
+      box-shadow:0 5px 20px rgba(0,70,120,.05);position:relative;overflow:hidden;
+      transition:.2s ease;
+    }
+    .highlight:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover)}
+    .highlight:before{content:"";position:absolute;left:0;top:0;width:4px;height:100%;background:var(--uns-yellow)}
+    .highlight strong{display:block;color:var(--uns-blue);font-size:23px;line-height:1.15;font-weight:900}
+    .highlight span{font-size:11px;color:var(--muted);font-weight:700;margin-top:3px;display:block}
+
+    /* --- Core Study & Competency Cards --- */
+    .core-section{background:var(--soft)}
+    .core-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+    .core-card{
+      background:#fff;border-radius:12px;padding:30px;border:1px solid var(--line);
+      box-shadow:0 6px 24px rgba(0,70,120,.05);position:relative;
+    }
+    .core-card-header{display:flex;align-items:center;gap:14px;margin-bottom:20px;padding-bottom:16px;border-bottom:2px solid var(--soft)}
+    .core-icon{
+      width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--uns-blue),var(--uns-cyan));
+      color:#fff;display:grid;place-items:center;font-weight:900;font-size:20px;
+      box-shadow:0 8px 20px rgba(0,116,214,.2);flex:0 0 auto;
+    }
+    .core-card h3{margin:0;color:var(--uns-teal);font-size:20px;font-weight:800}
+    .core-card p.subtitle{margin:3px 0 0;font-size:12px;color:var(--muted);font-weight:600}
+    .core-list{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+    .core-list li{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:#2C3E50;line-height:1.5}
+    .core-list li:before{
+      content:"✓";width:22px;height:22px;border-radius:50%;background:#E0F2FE;color:var(--uns-blue);
+      display:grid;place-items:center;font-weight:900;font-size:11px;flex:0 0 auto;margin-top:2px;
+    }
+
+    /* --- Accreditation Section --- */
+    .accreditation{background:#fff}
+    .accredit-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:24px;align-items:stretch}
+    .accredit-main{
+      position:relative;overflow:hidden;border-radius:14px;padding:32px;
+      background:linear-gradient(145deg,#0877D2 0%,#049AD9 100%);color:#fff;
+      box-shadow:0 16px 42px rgba(0,92,160,.2);border-bottom:6px solid var(--uns-yellow);
+      display:flex;flex-direction:column;justify-content:space-between;
+    }
+    .accredit-main:after{content:"";position:absolute;width:220px;height:220px;border:38px solid rgba(255,255,255,.08);border-radius:50%;right:-80px;top:-80px;pointer-events:none}
+    .accredit-eyebrow{font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:#DDF4FF}
+    .accredit-grade{font-size:62px;line-height:.95;font-weight:950;letter-spacing:-.05em;color:var(--uns-yellow);margin:12px 0 8px}
+    .accredit-score{display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border-radius:6px;background:rgba(255,255,255,.15);font-size:11px;font-weight:800;margin-bottom:18px}
+    .accredit-main h3{font-size:22px;margin:0 0 6px;font-weight:800}.accredit-main p{font-size:12.5px;color:#DDEFFA;margin:0 0 20px}
+    .accredit-period{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:auto}
+    .accredit-period div{padding:12px;border:1px solid rgba(255,255,255,.22);border-radius:8px;background:rgba(255,255,255,.09)}
+    .accredit-period small{display:block;font-size:9.5px;opacity:.82;text-transform:uppercase;font-weight:800}.accredit-period strong{display:block;font-size:13px;margin-top:2px;font-weight:800}
+
+    .accredit-detail{border:1px solid var(--line);border-radius:14px;padding:30px;background:#F9FCFE}
+    .accredit-detail h3{margin:0 0 6px;color:var(--uns-teal);font-size:22px;font-weight:800}.accredit-detail>p{margin:0 0 18px;color:var(--muted);font-size:12.5px}
+    .accredit-data{display:grid;gap:0;border-top:1px solid #DCE8F0}
+    .accredit-row{display:grid;grid-template-columns:160px 1fr;gap:14px;padding:13px 0;border-bottom:1px solid #DCE8F0;font-size:12px}
+    .accredit-row span{color:#64748B;font-weight:700}.accredit-row strong{color:#0F172A;overflow-wrap:anywhere;font-weight:700}
+    .accredit-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+
+    /* --- Admission Pathways (Jalur Masuk) --- */
+    .pathways{background:linear-gradient(180deg,#076FC7 0%,#0588D4 100%);color:#fff;border-top:5px solid var(--uns-yellow);border-bottom:5px solid var(--uns-yellow)}
+    .pathways .section-title h2,.pathways .section-title p{color:#fff}.pathways .section-title p{opacity:.9}
+    .pathways .title-line{background:var(--uns-yellow)}
+    .path-grid{display:grid;grid-template-columns:310px 1fr;gap:24px;align-items:start}
+    .tab-list{display:grid;gap:10px}
+    .tab-btn{border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.09);color:#fff;border-radius:8px;text-align:left;padding:18px 16px;cursor:pointer;font-weight:800;transition:.2s ease}
+    .tab-btn small{display:block;font-size:10px;margin-top:4px;opacity:.82;font-weight:600}
+    .tab-btn.active{background:#fff;color:var(--uns-blue);border-color:#fff;box-shadow:0 12px 30px rgba(0,55,100,.2);transform:translateX(4px)}
+    .path-panel{display:none;background:#fff;color:var(--ink);border-radius:12px;padding:30px;box-shadow:var(--shadow)}
+    .path-panel.active{display:block}
+    .path-panel h3{color:var(--uns-teal);font-size:24px;margin:0 0 8px;font-weight:800}.path-panel>p{font-size:13.5px;color:var(--muted);margin:0;line-height:1.6}
+    .path-points{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:22px 0}
+    .path-point{padding:14px;border:1px solid var(--line);background:#F8FBFD;border-radius:8px}
+    .path-point strong{display:block;font-size:12.5px;color:var(--uns-blue);font-weight:800}.path-point span{font-size:11px;color:var(--muted)}
+    .note{font-size:11.5px;background:#FFF9D6;border-left:4px solid var(--uns-yellow-2);padding:12px 14px;color:#594E1D;border-radius:4px;line-height:1.55}
+
+    /* --- Pengajar & Kepakaran (Faculty) --- */
+    .faculty{background:var(--soft)}
+    .expert-banner{
+      background:#fff;border:1px solid #DCE7EF;border-radius:12px;padding:22px 26px;
+      display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;margin-bottom:28px;
+      box-shadow:0 6px 22px rgba(0,74,130,.06);
+    }
+    .expert-brand{display:flex;align-items:center;gap:16px}
+    .expert-mark{width:54px;height:54px;background:linear-gradient(135deg,var(--uns-blue),var(--uns-cyan));color:#fff;border-radius:10px;display:grid;place-items:center;font-weight:950;font-size:20px;flex:0 0 auto}
+    .expert-copy strong{display:block;color:var(--uns-teal);font-size:19px;font-weight:800}.expert-copy span{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+    .expert-search-box{display:flex;min-width:380px;height:44px;border:1px solid #CBDCE8;border-radius:6px;overflow:hidden;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+    .expert-search-box input{flex:1;border:0;padding:0 14px;font-size:12px;outline:none;color:var(--ink)}
+    .expert-search-box button{width:50px;border:0;background:var(--uns-blue);color:#fff;cursor:pointer;font-size:15px;transition:.15s ease}
+    .expert-search-box button:hover{background:var(--uns-blue-3)}
+
+    .faculty-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .person{
+      background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px;
+      position:relative;overflow:hidden;transition:.2s ease;display:flex;flex-direction:column;
+    }
+    .person:before{content:"";position:absolute;left:0;top:0;right:0;height:4px;background:linear-gradient(90deg,var(--uns-blue),var(--uns-cyan))}
+    .person:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(0,73,132,.12)}
+    .person-head{display:flex;gap:14px;align-items:center;margin-bottom:14px}
+    .avatar{
+      width:48px;height:48px;border-radius:50%;background:#E8F4FC;color:var(--uns-blue);
+      border:2px solid #CBE5F5;display:grid;place-items:center;font-weight:900;font-size:13px;flex:0 0 auto;
+    }
+    .person h3{margin:0;color:#0F5B80;font-size:13.5px;line-height:1.35;font-weight:800}.person p{margin:4px 0 0;font-size:11px;color:var(--muted);line-height:1.4}
+    .chips{margin-top:auto;padding-top:12px}
+    .expert-chip{display:inline-flex;padding:4px 9px;border-radius:4px;background:#EDF6FC;color:#355B75;font-size:9.5px;font-weight:800;margin:3px 3px 0 0}
+    .faculty-cta{margin-top:26px;display:flex;justify-content:center}
+
+    /* --- Potret Lulusan & Testimoni Alumni / Mahasiswa --- */
+    .testimonials{background:#fff}
+    .testi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+    .testi-card{
+      background:linear-gradient(145deg,#005AA8 0%,#0074D6 100%);color:#fff;
+      border-radius:14px;padding:28px;box-shadow:0 12px 32px rgba(0,73,132,.16);
+      position:relative;display:flex;flex-direction:column;justify-content:space-between;
+    }
+    .testi-card.mahasiswa{
+      background:linear-gradient(145deg,#0284C7 0%,#0EA5E9 100%);
+    }
+    .testi-tag{display:inline-flex;align-items:center;gap:6px;background:var(--uns-yellow);color:#142B3B;padding:4px 10px;border-radius:4px;font-size:10.5px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;align-self:flex-start;margin-bottom:16px}
+    .testi-quote{font-size:13.5px;line-height:1.65;color:#F0F9FF;font-style:italic;margin-bottom:20px;position:relative}
+    .testi-quote:before{content:"“";font-size:40px;line-height:0;position:absolute;left:-16px;top:10px;opacity:.3;font-family:serif}
+    .testi-author{display:flex;align-items:center;gap:14px;border-top:1px solid rgba(255,255,255,.2);padding-top:16px}
+    .author-img{width:46px;height:46px;border-radius:50%;background:#fff;color:var(--uns-blue);display:grid;place-items:center;font-weight:900;font-size:14px;border:2px solid var(--uns-yellow)}
+    .author-info strong{display:block;font-size:14px;color:#fff;font-weight:800}.author-info span{font-size:11px;color:#DDF4FF}
+
+    /* --- Best Graduate Highlight Box (Potret Lulusan Terbaik) --- */
+    .best-graduate{
+      background:linear-gradient(90deg,#FFFDF0,#FFF9DB);border:2px solid var(--uns-yellow);
+      border-radius:14px;padding:26px;margin-bottom:32px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;
+      box-shadow:0 8px 24px rgba(245,201,31,.15);
+    }
+    .grad-badge{background:var(--uns-yellow);color:#142B3B;padding:6px 14px;border-radius:6px;font-size:11px;font-weight:900;display:inline-block;margin-bottom:8px}
+    .grad-photo{width:90px;height:90px;border-radius:50%;background:var(--uns-blue);color:#fff;display:grid;place-items:center;font-size:32px;font-weight:900;border:4px solid #fff;box-shadow:0 6px 16px rgba(0,0,0,.15)}
+    .grad-info h4{margin:0 0 4px;font-size:18px;color:#0F5B80;font-weight:800}.grad-info p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.5}
+    .scopus-badge{display:inline-flex;align-items:center;gap:6px;background:#0369A1;color:#fff;padding:3px 10px;border-radius:4px;font-size:10.5px;font-weight:800;margin-top:8px}
+
+    /* --- Peluang Karir & Fasilitas --- */
+    .career-facility{background:var(--soft)}
+    .cf-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+    .cf-box{background:#fff;border-radius:12px;padding:28px;border:1px solid var(--line);box-shadow:0 6px 20px rgba(0,70,120,.04)}
+    .cf-box h3{margin:0 0 16px;color:var(--uns-teal);font-size:20px;font-weight:800;display:flex;align-items:center;gap:10px}
+    .cf-box h3 span{width:32px;height:32px;border-radius:6px;background:#E0F2FE;color:var(--uns-blue);display:grid;place-items:center;font-size:15px}
+    .cf-items{display:grid;gap:12px}
+    .cf-item{padding:12px 14px;background:#F8FAFC;border-left:4px solid var(--uns-cyan);border-radius:0 6px 6px 0;font-size:13px;font-weight:700;color:#1E293B}
+
+    /* --- Informasi SPMB Pendaftaran --- */
+    .spmb-info{background:#fff}
+    .spmb-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px}
+    .spmb-stat{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:10px;padding:22px 20px;background:#fff;box-shadow:0 5px 18px rgba(0,70,120,.045)}
+    .spmb-stat:after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,var(--uns-blue),var(--uns-cyan))}
+    .spmb-stat strong{display:block;color:var(--uns-blue);font-size:24px;line-height:1.1;margin-bottom:4px;font-weight:900}.spmb-stat span{font-size:11px;color:var(--muted);font-weight:700}
+    .spmb-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+    .info-card{border:1px solid var(--line);border-radius:12px;padding:26px;background:#F9FCFE}
+    .info-card h3{margin:0 0 8px;color:var(--uns-teal);font-size:20px;font-weight:800}.info-card>p{margin:0 0 18px;color:var(--muted);font-size:12.5px}
+    .flow{display:grid;gap:0;counter-reset:step}
+    .flow-step{position:relative;padding:14px 12px 14px 54px;border-top:1px solid #DCE8F0;font-size:11.5px;color:#536777;min-height:50px}
+    .flow-step:first-child{border-top:0}.flow-step:before{counter-increment:step;content:counter(step);position:absolute;left:8px;top:12px;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--uns-blue);color:#fff;font-weight:950;font-size:11px}
+    .flow-step strong{display:block;color:#143C56;font-size:12px;font-weight:800}
+    .requirement-list{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .requirement{border:1px solid #DCE8F0;border-radius:8px;padding:13px;background:#fff;font-size:11px;color:var(--muted)}
+    .requirement strong{display:block;color:var(--uns-blue);font-size:11.5px;margin-bottom:3px;font-weight:800}
+    .official-note{margin-top:22px;padding:16px 18px;background:#EEF8FD;border-left:4px solid var(--uns-blue);border-radius:6px;color:#3C5A6C;font-size:11.5px;line-height:1.6}
+    .official-note strong{color:var(--uns-teal);font-weight:800}
+    .source-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .mini-link{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border:1px solid #BCD7EA;border-radius:5px;color:var(--uns-teal);font-size:10.5px;font-weight:800;background:#fff;transition:.15s ease}
+    .mini-link:hover{background:#F1F8FC;border-color:var(--uns-blue)}
+
+    /* --- CTA Section --- */
+    .cta-section{padding:64px 0;background:#fff}
+    .cta-box{
+      background:linear-gradient(90deg,#0875D0,#039DE0);color:#fff;border-radius:12px;
+      padding:40px 44px;border-bottom:6px solid var(--uns-yellow);display:grid;
+      grid-template-columns:1fr auto;gap:28px;align-items:center;box-shadow:0 16px 40px rgba(0,100,180,.18);
+    }
+    .cta-box h2{font-size:28px;line-height:1.2;margin:0 0 8px;font-weight:800}.cta-box p{font-size:13px;margin:0;color:#EAF7FF;max-width:680px}.cta-actions{display:flex;gap:10px}
+
+    /* --- UNS Dark Footer --- */
+    footer{background:var(--footer);color:#fff;border-top:5px solid var(--uns-yellow);padding:44px 0 22px}
+    .footer-portals{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;padding-bottom:32px;border-bottom:1px solid #2D3748}
+    .portal{font-size:20px;font-weight:950;color:#F5F5F5;letter-spacing:-.02em;transition:.15s ease}.portal:hover{color:var(--uns-yellow)}
+    .portal small{display:block;font-size:8.5px;color:#A0AEC0;margin-top:3px;letter-spacing:.04em;font-weight:600}
+    .foot-grid{display:grid;grid-template-columns:1.4fr .8fr .8fr;gap:48px;padding:36px 0 24px}
+    .foot-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px}.foot-mark{width:50px;height:50px;border:2px solid #fff;border-radius:50%;display:grid;place-items:center;font-weight:950;font-size:16px}.foot-brand strong{font-size:18px;line-height:1.1;font-weight:800}.foot-text{font-size:10.5px;color:#CBD5E0;max-width:440px;line-height:1.6}.foot-title{font-size:13px;font-weight:900;margin-bottom:12px;color:var(--uns-yellow)}.foot-links{display:grid;gap:8px;font-size:11px;color:#E2E8F0}.foot-links a:hover{color:var(--uns-yellow)}
+    .social-links{display:flex;gap:10px;margin-top:14px}
+    .social-icon{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.1);display:grid;place-items:center;font-size:12px;color:#fff;transition:.15s ease}
+    .social-icon:hover{background:var(--uns-yellow);color:#142B3B}
+    .copyright{text-align:center;border-top:1px solid #2D3748;padding-top:18px;font-size:10px;color:#94A3B8}
+
+    .mobile-cta{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:100;background:var(--uns-yellow);color:#142B3B;border-radius:8px;padding:13px 16px;text-align:center;font-weight:900;font-size:13px;box-shadow:0 14px 35px rgba(0,0,0,.3)}
+
+    /* --- Comprehensive Responsive Breakpoints --- */
+    @media(max-width:1024px){
+      .header-search{min-width:200px}
+      .program-menu{gap:16px}
+      .hero-inner{grid-template-columns:1fr;gap:32px}
+      .hero-card{max-width:100%}
+      .accredit-grid,.core-grid,.cf-grid{grid-template-columns:1fr}
+      .highlight-grid{grid-template-columns:repeat(3,1fr)}
+      .faculty-grid,.testi-grid{grid-template-columns:repeat(2,1fr)}
+      .spmb-summary{grid-template-columns:repeat(3,1fr)}.spmb-grid{grid-template-columns:1fr}
+      .path-grid{grid-template-columns:250px 1fr}
+      .expert-banner{grid-template-columns:1fr}.expert-search-box{min-width:0;width:100%}
+      .cta-box{grid-template-columns:1fr}.footer-portals{grid-template-columns:repeat(3,1fr)}
+    }
+    @media(max-width:850px){
+      .program-nav-inner{
+        flex-direction:column;align-items:stretch;gap:8px;padding:8px 0;
+      }
+      .program-nav-top{
+        display:flex;align-items:center;justify-content:space-between;width:100%;
+      }
+      .program-menu{
+        width:100%;gap:10px;padding:6px 0 4px;border-top:1px solid rgba(255,255,255,.18);
+      }
+      .program-menu a{
+        background:rgba(255,255,255,.14);padding:6px 12px;border-radius:4px;font-size:11px;
+      }
+      .program-menu a:hover, .program-menu a:active{
+        background:var(--uns-yellow);color:#142B3B;
+      }
+      .path-grid{grid-template-columns:1fr}
+      .tab-list{grid-template-columns:repeat(3,1fr);overflow-x:auto}
+      .tab-btn{padding:12px;font-size:11px}
+      .tab-btn small{display:none}
+      .foot-grid{grid-template-columns:1fr;gap:28px}
+    }
+    @media(max-width:640px){
+      .container{width:min(calc(100% - 24px),var(--max))}
+      .utility-right{display:none}.utility-left{gap:10px}
+      .dikti-badge{display:none}
+      .header-main{height:68px;gap:12px}
+      .header-search{display:none}
+      .brand-copy strong{font-size:13.5px}.brand-copy span{font-size:9.5px}
+      .logo-box{width:44px;height:44px;font-size:14px}
+      .program-name{font-size:11.5px}.nav-cta{font-size:10px;padding:6px 12px}
+      .hero-inner{padding:38px 0 46px}.hero h1{font-size:32px}.hero p{font-size:14px}.hero-actions{display:grid;width:100%}.btn{width:100%}
+      .accredit-row{grid-template-columns:1fr;gap:4px}.accredit-period{grid-template-columns:1fr}
+      section{padding:48px 0}
+      .highlight-grid{grid-template-columns:repeat(2,1fr)}
+      .faculty-grid,.testi-grid,.path-points,.requirement-list,.spmb-summary{grid-template-columns:1fr}
+      .tab-list{grid-template-columns:1fr}
+      .tab-btn small{display:block}
+      .path-panel{padding:20px}
+      .best-graduate{grid-template-columns:1fr;text-align:center;padding:20px}.grad-photo{margin:0 auto}
+      .expert-banner{padding:16px}.expert-brand{align-items:flex-start}.expert-mark{width:44px;height:44px}.expert-search-box{height:40px}
+      .cta-box{padding:26px 20px}.cta-actions{display:grid;width:100%}.footer-portals{grid-template-columns:repeat(2,1fr)}
+      .mobile-cta{display:block}body{padding-bottom:70px}
+    }
+    @media(max-width:420px){
+      .highlight-grid{grid-template-columns:1fr}
+      .hero-mini-grid{grid-template-columns:1fr}
+      .footer-portals{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <!-- Utility Topbar -->
+  <div class="utility">
+    <div class="container utility-inner">
+      <div class="utility-left">
+        <span class="id-badge"><i class="id-dot"></i> ID ▾</span>
+        <span class="dikti-badge">DIKTISAINTEK BERDAMPAK</span>
+        <a href="https://uns.ac.id/id/" target="_blank" rel="noopener">Berita Terkini</a>
+        <a href="https://fkip.uns.ac.id/" target="_blank" rel="noopener">FKIP UNS</a>
+        <a href="https://expert.uns.ac.id/" target="_blank" rel="noopener">Expert UNS</a>
+      </div>
+      <div class="utility-right">
+        <a href="https://spmb.uns.ac.id/" target="_blank" rel="noopener">SPMB UNS</a>
+        <a href="https://uns.ac.id/id/akademik/" target="_blank" rel="noopener">Akademik</a>
+        <a href="https://uns.ac.id/id/" target="_blank" rel="noopener">UNS</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Section -->
+  <header class="site-header">
+    <div class="container header-main">
+      <a class="brand" href="#top" aria-label="Pascasarjana FKIP UNS">
+        <div class="logo-box">UNS</div>
+        <div class="brand-copy">
+          <strong>PASCASARJANA FKIP UNS</strong>
+          <span>Universitas Sebelas Maret · Surakarta</span>
+        </div>
+      </a>
+      <a class="header-search" href="https://expert.uns.ac.id/" target="_blank" rel="noopener" aria-label="Cari kepakaran di Expert UNS">
+        <span>Cari pakar S3 Pendidikan Ekonomi...</span><b>⌕</b>
+      </a>
+    </div>
+  </header>
+
+  <!-- Sticky Program Nav (Responsive) -->
+  <nav class="program-nav" aria-label="Navigasi program studi">
+    <div class="container program-nav-inner">
+      <div class="program-nav-top">
+        <div class="program-name">
+          S3 PENDIDIKAN EKONOMI <span>DOKTOR</span>
+        </div>
+        <a class="nav-cta" href="https://spmb.uns.ac.id/pendaftar/dashboard/index" target="_blank" rel="noopener">DAFTAR S3 ↗</a>
+      </div>
+      <div class="program-menu">
+        <a href="#profil">PROFIL</a>
+        <a href="#core-study">CORE STUDY</a>
+        <a href="#jalur">JALUR MASUK</a>
+        <a href="#akreditasi">AKREDITASI</a>
+        <a href="#dosen">DOSEN & KEPAKARAN</a>
+        <a href="#testimoni">TESTIMONI</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Body Content -->
+  <main id="top">
+    <!-- Hero Banner Section -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <div>
+          <div class="breadcrumbs">FKIP UNS / Pascasarjana / Program Doktoral (S3) / Pendidikan Ekonomi</div>
+          <div class="hero-kicker">Program Doktoral (S3)</div>
+          <h1 id="hero-title">Doktor <span>Pendidikan Ekonomi</span></h1>
+          <p>Mencetak doktor dan peneliti ahli bidang Pendidikan Ekonomi yang unggul, berkarakter, dan berreputasi internasional melalui penguatan publikasi Scopus, riset inovatif, dan kolaborasi global.</p>
+          <div class="hero-actions">
+            <a class="btn btn-yellow" href="https://spmb.uns.ac.id/pendaftar/dashboard/index" target="_blank" rel="noopener">DAFTAR SEKARANG →</a>
+            <a class="btn btn-outline" href="#jalur">JALUR MASUK & SYARAT</a>
+            <a class="btn btn-outline" href="https://s3pe.fkip.uns.ac.id/" target="_blank" rel="noopener">PORTAL S3PE ↗</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Ringkasan S3 Pendidikan Ekonomi">
+          <div class="hero-card-label">
+            Pascasarjana FKIP UNS
+            <span class="tag">Doktor (S3)</span>
+          </div>
+          <h3>Pendidikan Ekonomi</h3>
+          <p>Fokus studi interdisipliner mengintegrasikan Pendidikan Ekonomi, Akuntansi, Manajemen, dan Ekonomi Pembangunan berbasis riset orisinal.</p>
+          <div class="hero-mini-grid">
+            <div class="hero-mini"><strong>Dr.</strong><span>Gelar yang didapatkan</span></div>
+            <div class="hero-mini"><strong>3 Tahun</strong><span>Rancangan masa studi (6 SMT)</span></div>
+            <div class="hero-mini"><strong>1 Bulan</strong><span>Rata-rata masa tunggu kerja alumni</span></div>
+            <div class="hero-mini"><strong>Unggul / A</strong><span>Akreditasi Lamdik & BAN-PT</span></div>
+          </div>
+          <div class="accred">★ Akreditasi UNGGUL / A · Fasilitas Writing Camp Scopus & Sandwich International Program</div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Highlight Metrics Strip -->
+    <section class="highlights" aria-label="Ringkasan angka dan keunggulan">
+      <div class="container">
+        <div class="highlight-grid">
+          <div class="highlight"><strong>Dr.</strong><span>Gelar Akademik Doktor</span></div>
+          <div class="highlight"><strong>3 Tahun</strong><span>Panjang Masa Studi</span></div>
+          <div class="highlight"><strong>1 Bulan</strong><span>Masa Tunggu Kerja Alumni</span></div>
+          <div class="highlight"><strong>Unggul (A)</strong><span>Status Akreditasi Resmi</span></div>
+          <div class="highlight"><strong>Scopus</strong><span>Writing Camp & Riset International</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Profil & Core Study Section -->
+    <section id="profil" class="core-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Fokus Studi & Kompetensi Utama</h2>
+          <div class="title-line"></div>
+          <p>Program Studi S3 Pendidikan Ekonomi FKIP UNS memberikan kurikulum komprehensif yang dirancang untuk membangun kepemimpinan akademik dan kepakaran riset di tingkat nasional maupun internasional.</p>
+        </div>
+
+        <div class="core-grid" id="core-study">
+          <!-- Core Study Box -->
+          <article class="core-card">
+            <div class="core-card-header">
+              <div class="core-icon">📚</div>
+              <div>
+                <h3>Core Study (Bidang Kajian Utama)</h3>
+                <p class="subtitle">Integrasi Keilmuan Ekonomi & Pembelajaran</p>
+              </div>
+            </div>
+            <ul class="core-list">
+              <li><strong>Auditing & Assurance:</strong> Penguatan tata kelola, pengawasan keuangan, dan standar auditing modern.</li>
+              <li><strong>CSR & Sustainability Accounting:</strong> Akuntansi keberlanjutan, laporan keberlanjutan, dan etika bisnis.</li>
+              <li><strong>Manajemen Sumber Daya Manusia & Strategi:</strong> Kepemimpinan organisasi, perilaku keorganisasian, dan efisiensi SDM.</li>
+              <li><strong>Analisis Kebijakan Pembangunan:</strong> Ekonometrika lanjut, evaluasi kebijakan publik, dan ekonomi regional.</li>
+              <li><strong>Inovasi Pembelajaran Ekonomi Digital:</strong> Penggalian model pembelajaran terbarukan berbasis teknologi informasi.</li>
+            </ul>
+          </article>
+
+          <!-- Kompetensi Box -->
+          <article class="core-card">
+            <div class="core-card-header">
+              <div class="core-icon">🎯</div>
+              <div>
+                <h3>Kompetensi Lulusan (KKNI Level 9)</h3>
+                <p class="subtitle">Capaian Akademik & Standar Kelulusan</p>
+              </div>
+            </div>
+            <ul class="core-list">
+              <li><strong>Riset Orisinal & Kebaharuan:</strong> Mampu mengembangkan konsep ilmiah baru sesuai minat utama melalui penelitian disertasi orisinal.</li>
+              <li><strong>Publikasi Reputasi Internasional:</strong> Mampu mempublikasikan karya ilmiah di jurnal nasional terakreditasi dan jurnal internasional bereputasi (Scopus / Web of Science).</li>
+              <li><strong>Konsultasi & Keahlian Kebijakan:</strong> Mampu memecahkan permasalahan ekonomi dan pendidikan melalui pendekatan interdisipliner.</li>
+              <li><strong>Jejaring Akademik Global:</strong> Mampu berkolaborasi dalam forum ilmiah internasional dan riset bersama mitra global.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Akreditasi Section -->
+    <section id="akreditasi" class="accreditation">
+      <div class="container">
+        <div class="section-title">
+          <h2>Akreditasi Program Studi</h2>
+          <div class="title-line"></div>
+          <p>Prodi S3 Pendidikan Ekonomi Pascasarjana FKIP UNS mempertahankan standar penjaminan mutu tinggi dengan status peringkat akreditasi tertinggi.</p>
+        </div>
+        <div class="accredit-grid">
+          <article class="accredit-main" aria-label="Status akreditasi S3 Pendidikan Ekonomi">
+            <div>
+              <div class="accredit-eyebrow">Peringkat Akreditasi Resmi</div>
+              <div class="accredit-grade">UNGGUL</div>
+              <div class="accredit-score">Terakreditasi A / UNGGUL · LAMDIK & BAN-PT</div>
+              <h3>S3 Pendidikan Ekonomi</h3>
+              <p>Fakultas Keguruan dan Ilmu Pendidikan · Universitas Sebelas Maret Surakarta</p>
+            </div>
+            <div class="accredit-period">
+              <div><small>Jenjang Kelulusan</small><strong>Doktor (Dr.)</strong></div>
+              <div><small>Standar Kualifikasi</small><strong>KKNI Level 9</strong></div>
+            </div>
+          </article>
+
+          <article class="accredit-detail">
+            <h3>Jaminan Mutu & Keunggulan Program</h3>
+            <p>Informasi pendukung proses pembelajaran dan pengakuan standar nasional institusi.</p>
+            <div class="accredit-data">
+              <div class="accredit-row"><span>Lembaga Pengakreditasi</span><strong>Lembaga Akreditasi Mandiri Kependidikan (LAMDIK) / BAN-PT</strong></div>
+              <div class="accredit-row"><span>Gelar Kelulusan</span><strong>Doktor (Dr.)</strong></div>
+              <div class="accredit-row"><span>Masa Studi Acuan</span><strong>3 Tahun (6 Semester)</strong></div>
+              <div class="accredit-row"><span>Rata-Rata Masa Tunggu Kerja</span><strong>1 Bulan setelah lulus</strong></div>
+              <div class="accredit-row"><span>Program Unggulan</span><strong>Scopus Writing Camp & International Sandwich Program</strong></div>
+            </div>
+            <div class="accredit-actions">
+              <a class="btn btn-blue" href="https://akademik.fkip.uns.ac.id/akreditasi/" target="_blank" rel="noopener">AKREDITASI FKIP UNS ↗</a>
+              <a class="mini-link" href="https://layanan-lppmp.uns.ac.id/akreditasi/prodi/s-3-pendidikan-ekonomi" target="_blank" rel="noopener">Detail sertifikat UNS ↗</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Admission Pathways (Jalur Masuk) -->
+    <section id="jalur" class="pathways">
+      <div class="container">
+        <div class="section-title">
+          <h2>Jalur Masuk Pendaftaran</h2>
+          <div class="title-line"></div>
+          <p>Pilih skema pendaftaran doktor yang sesuai dengan latar belakang akademik, fokus riset, dan kebutuhan profesional Anda.</p>
+        </div>
+        <div class="path-grid">
+          <div class="tab-list" role="tablist" aria-label="Pilihan jalur masuk">
+            <button class="tab-btn active" role="tab" aria-selected="true" data-tab="reguler">REGULER<small>Kuliah terstruktur, metodologi & disertasi</small></button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="riset">BY RESEARCH (DOKTOR PENELITIAN)<small>Fokus riset mandiri, bimbingan & publikasi Scopus</small></button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="rpl">RPL & KERJASAMA<small>Rekognisi Pembelajaran Lampau & beasiswa instansi</small></button>
+          </div>
+          <div>
+            <!-- Panel Reguler -->
+            <article class="path-panel active" data-panel="reguler">
+              <h3>Jalur Reguler Doktoral</h3>
+              <p>Jalur seleksi Doktor bagi calon mahasiswa yang mengikuti perkuliahan terstruktur, pendalaman teori ekonomi & kependidikan, metodologi riset ektensif, dilanjutkan ujian kualifikasi, proposal, dan penyelesaian disertasi.</p>
+              <div class="path-points">
+                <div class="path-point"><strong>Kualifikasi Pendaftar</strong><span>Lulusan Magister (S2) bidang Ekonomi, Pendidikan Ekonomi, Manajemen, Akuntansi, atau bidang relevan (IPK min 3.00).</span></div>
+                <div class="path-point"><strong>Seleksi Akademik</strong><span>Verifikasi berkas, Tes Potensi Akademik (TPA), Kemampuan Bahasa Inggris, serta Wawancara Proposal Rencana Riset.</span></div>
+                <div class="path-point"><strong>Masa Studi</strong><span>Dirancang 6 Semester (3 Tahun) dengan batas maksimal sesuai regulasi akademik UNS.</span></div>
+                <div class="path-point"><strong>Pendaftaran Online</strong><span>Pendaftaran resmi melalui portal SPMB Universitas Sebelas Maret.</span></div>
+              </div>
+              <div class="note">Catatan: Jadwal gelombang pendaftaran dibuka 2 kali dalam setahun (Semester Gasal & Genap). Selalu cek portal SPMB UNS untuk update tanggal penting.</div>
+              <div style="height:16px"></div>
+              <a class="btn btn-blue" href="https://spmb.uns.ac.id/pendaftar/dashboard/index" target="_blank" rel="noopener">DAFTAR JALUR REGULER ↗</a>
+            </article>
+
+            <!-- Panel By Research -->
+            <article class="path-panel" data-panel="riset">
+              <h3>Doktor Jalur Penelitian (By Research)</h3>
+              <p>Diperuntukkan bagi praktisi, dosen, atau peneliti yang memiliki rekam jejak publikasi ilmiah dan arah riset disertasi yang matang. Bebas dari kuliah tatap muka intensif, difokuskan pada bimbingan promotor dan luaran Scopus.</p>
+              <div class="path-points">
+                <div class="path-point"><strong>Calon Promotor</strong><span>Menentukan dan berkomunikasi dengan calon Promotor/Co-Promotor dari dosen pakar S3 Pendidikan Ekonomi UNS.</span></div>
+                <div class="path-point"><strong>Draft Proposal Disertasi</strong><span>Melampirkan draft rancangan riset orisinal yang telah disetujui oleh calon pembimbing.</span></div>
+                <div class="path-point"><strong>Rekam Jejak Publikasi</strong><span>Memiliki Portofolio artikel jurnal ilmiah atau karya publikasi yang menjadi nilai tambah signifikan.</span></div>
+                <div class="path-point"><strong>Luaran Wajib</strong><span>Publikasi di Jurnal Internasional Bereputasi (Scopus) dan Disertasi.</span></div>
+              </div>
+              <div class="note">Sesuai Keputusan Rektor UNS No. 282 Tahun 2025 tentang Pedoman Magister & Doktor Jalur Penelitian. Sertakan surat rekomendasi calon pembimbing saat mengunggah berkas.</div>
+              <div style="height:16px"></div>
+              <div class="source-links">
+                <a class="btn btn-blue" href="https://spmb.uns.ac.id/jalur-masuk/jenjang?jenjang=s2-s3" target="_blank" rel="noopener">CEK JALUR S3 PENELITIAN ↗</a>
+                <a class="mini-link" href="https://expert.uns.ac.id/" target="_blank" rel="noopener">Cari Calon Promotor di Expert UNS ↗</a>
+              </div>
+            </article>
+
+            <!-- Panel RPL & Kerjasama -->
+            <article class="path-panel" data-panel="rpl">
+              <h3>Jalur RPL & Kemitraan Beasiswa</h3>
+              <p>Program Rekognisi Pembelajaran Lampau (RPL) dan skema beasiswa kerjasama bagi instansi pemerintah, BUMN, perguruan tinggi mitra, serta penerima Beasiswa LPDP / Diktiristek / UNS.</p>
+              <div class="path-points">
+                <div class="path-point"><strong>Skema RPL</strong><span>Pengakuan atas pengalaman kerja, karya ilmiah, dan riset terdahulu untuk mengonversi SKS perkuliahan.</span></div>
+                <div class="path-point"><strong>Mitra Beasiswa</strong><span>Dukungan penuh untuk mahasiswa penerima Beasiswa LPDP, BPI Kemendikbud, Beasiswa Uns, dan Beasiswa Instansi Mitra.</span></div>
+                <div class="path-point"><strong>Kerjasama Instansi</strong><span>Kesempatan bagi staf dosen/peneliti dari perguruan tinggi mitra atau lembaga pemerintah.</span></div>
+                <div class="path-point"><strong>Sandwich Program</strong><span>Fasilitas riset kolaborasi di Perguruan Tinggi Luar Negeri mitra UNS.</span></div>
+              </div>
+              <div class="note">Konsultasikan skema beasiswa dan RPL langsung dengan Pengelola Pascasarjana FKIP UNS atau melalui sekretariat prodi.</div>
+              <div style="height:16px"></div>
+              <a class="btn btn-blue" href="https://spmb.uns.ac.id/" target="_blank" rel="noopener">INFORMASI BEASISWA SPMB ↗</a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Faculty & Experts Section (Pengajar & Keahlian) -->
+    <section id="dosen" class="faculty">
+      <div class="container">
+        <div class="section-title">
+          <h2>Pengajar & Kepakaran Dosen</h2>
+          <div class="title-line"></div>
+          <p>Didukung oleh Guru Besar (Profesor) dan Doktor berreputasi internasional dengan keahlian di bidang Akuntansi, Manajemen, Ekonomi Pembangunan, dan Pendidikan Ekonomi.</p>
+        </div>
+
+        <div class="expert-banner">
+          <div class="expert-brand">
+            <div class="expert-mark">E</div>
+            <div class="expert-copy">
+              <strong>Expert UNS Portal</strong>
+              <span>Jelajahi rekam jejak riset, publikasi Scopus, h-index, dan kepakaran tim pengajar S3 Pendidikan Ekonomi UNS.</span>
+            </div>
+          </div>
+          <div class="expert-search-box">
+            <input type="text" id="facultySearch" placeholder="Cari nama dosen atau bidang keahlian (misal: Akuntansi, Manajemen)...">
+            <button type="button" aria-label="Cari">⌕</button>
+          </div>
+        </div>
+
+        <div class="faculty-grid" id="facultyList">
+          <article class="person" data-expertise="manajemen">
+            <div class="person-head">
+              <div class="avatar">WU</div>
+              <div>
+                <h3>Prof. Dr. Wisnu Untoro, M.S.</h3>
+                <p>Guru Besar · Kepakaran Manajemen Strategi & Bisnis</p>
+              </div>
+            </div>
+            <div class="chips">
+              <span class="expert-chip">Manajemen</span>
+              <span class="expert-chip">Pendidikan Ekonomi</span>
+            </div>
+          </article>
+
+          <article class="person" data-expertise="ekonomi pembangunan">
+            <div class="person-head">
+              <div class="avatar">LH</div>
+              <div>
+                <h3>Lukman Hakim, S.E., M.Si., Ph.D.</h3>
+                <p>Dosen Pakar · Ekonomi Pembangunan & Moneter</p>
+              </div>
+            </div>
+            <div class="chips">
+              <span class="expert-chip">Ekonomi Pembangunan</span>
+              <span class="expert-chip">Kebijakan Publik</span>
+            </div>
+          </article>
+
+          <article class="person" data-expertise="akuntansi">
+            <div class="person-head">
+              <div class="avatar">BD</div>
+              <div>
+                <h3>Prof. Dr. Bandi, M.Si., Ak.</h3>
+                <p>Guru Besar · Akuntansi & Auditing Assurance</p>
+              </div>
+            </div>
+            <div class="chips">
+              <span class="expert-chip">Akuntansi</span>
+              <span class="expert-chip">Auditing</span>
+            </div>
+          </article>
+
+          <article class="person" data-expertise="akuntansi">
+            <div class="person-head">
+              <div class="avatar">BS</div>
+              <div>
+                <h3>Prof. Dr. Bambang Sutopo, M.Com., Ak.</h3>
+                <p>Guru Besar · Akuntansi Sektor Publik & Keuangan</p>
+              </div>
+            </div>
+            <div class="chips">
+              <span class="expert-chip">Akuntansi</span>
+              <span class="expert-chip">Keuangan Publik</span>
+            </div>
+          </article>
+
+          <article class="person" data-expertise="manajemen">
+            <div class="person-head">
+              <div class="avatar">TH</div>
+              <div>
+                <h3>Prof. Dr. Tulus Haryono, M.Ek.</h3>
+                <p>Guru Besar · Manajemen & Pemasaran</p>
+              </div>
+            </div>
+            <div class="chips">
+              <span class="expert-chip">Manajemen</span>
+              <span class="expert-chip">Pemberdayaan Ekonomi</span>
+            </div>
+          </article>
+
+          <article class="person" data-expertise="manajemen">
+            <div class="person-head">
+              <div class="avatar">SW</div>
+              <div>
+                <h3>Prof. Dr. Salamah Wahyuni, S.U.</h3>
+                <p>Guru Besar · Manajemen SDM & Perilaku Organisasi</p>
+              </div>
+            </div>
+            <div class="chips">
+              <span class="expert-chip">Manajemen SDM</span>
+              <span class="expert-chip">Perilaku Organisasi</span>
+            </div>
+          </article>
+
+          <article class="person" data-expertise="akuntansi">
+            <div class="person-head">
+              <div class="avatar">DS</div>
+              <div>
+                <h3>Prof. Drs. Djoko S., M.Com. (Hons)., Ph.D., Ak.</h3>
+                <p>Guru Besar · Governance & Auditing International</p>
+              </div>
+            </div>
+            <div class="chips">
+              <span class="expert-chip">Akuntansi</span>
+              <span class="expert-chip">Tata Kelola</span>
+            </div>
+          </article>
+
+          <article class="person" data-expertise="akuntansi">
+            <div class="person-head">
+              <div class="avatar">YA</div>
+              <div>
+                <h3>Prof. Dra. Y Anni Aryani, M.Prof.Acc., Ph.D., Ak.</h3>
+                <p>Guru Besar · Sustainability Accounting & Corporate Governance</p>
+              </div>
+            </div>
+            <div class="chips">
+              <span class="expert-chip">Akuntansi Sustainability</span>
+              <span class="expert-chip">CSR</span>
+            </div>
+          </article>
+
+          <article class="person" data-expertise="ekonomi pembangunan">
+            <div class="person-head">
+              <div class="avatar">AS</div>
+              <div>
+                <h3>Dr. Agustinus Suryantoro, M.S.</h3>
+                <p>Dosen Pakar · Ekonomi Pembangunan & Regional</p>
+              </div>
+            </div>
+            <div class="chips">
+              <span class="expert-chip">Ekonomi Pembangunan</span>
+              <span class="expert-chip">Perencanaan</span>
+            </div>
+          </article>
+
+          <article class="person" data-expertise="ekonomi pembangunan">
+            <div class="person-head">
+              <div class="avatar">AM</div>
+              <div>
+                <h3>Dr. Albertus Magnus Soesilo, M.Sc.</h3>
+                <p>Dosen Pakar · Makro Ekonomi & Kebijakan Publik</p>
+              </div>
+            </div>
+            <div class="chips">
+              <span class="expert-chip">Ekonomi Pembangunan</span>
+              <span class="expert-chip">Makro Ekonomi</span>
+            </div>
+          </article>
+        </div>
+        <div class="faculty-cta">
+          <a class="btn btn-blue" href="https://expert.uns.ac.id/" target="_blank" rel="noopener">TELUSURI DOSEN DI EXPERT UNS ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Potret Lulusan Terbaik & Testimoni Section -->
+    <section id="testimoni" class="testimonials">
+      <div class="container">
+        <div class="section-title">
+          <h2>Potret Lulusan & Testimoni</h2>
+          <div class="title-line"></div>
+          <p>Kisah sukses alumni dan pengalaman mahasiswa aktif selama menempuh program doktoral S3 Pendidikan Ekonomi FKIP UNS.</p>
+        </div>
+
+        <!-- Featured Best Graduate Card -->
+        <div class="best-graduate">
+          <div style="text-align:center">
+            <div class="grad-photo">BS</div>
+            <div class="scopus-badge">Scopus Author</div>
+          </div>
+          <div class="grad-info">
+            <span class="grad-badge">Potret Lulusan Terbaik</span>
+            <h4>Bambang Sutrisno - Lulusan 2021 (Doktor)</h4>
+            <p style="color:#0F5B80;font-weight:700;margin-bottom:6px">Dosen Universitas Muhammadiyah Jakarta</p>
+            <p><em>"Saya merasa sangat beruntung dapat menempuh studi doktoral di S3 Pendidikan Ekonomi UNS. Mata kuliahnya sangat relevan dan memperluas wawasan riset di bidang keuangan. Bimbingan luar biasa dari para Profesor dan promotor. Dua artikel disertasi saya terbit di jurnal internasional bereputasi Scopus, dan keikutsertaan konferensi internasional turut meningkatkan kemampuan riset saya."</em></p>
+          </div>
+        </div>
+
+        <!-- Testimonials Grid -->
+        <div class="testi-grid">
+          <article class="testi-card">
+            <div>
+              <span class="testi-tag">Testimoni Alumni</span>
+              <p class="testi-quote">
+                "Sebagai alumni S3 FKIP UNS, saya mendapatkan dukungan dosen yang sangat akrab, kompeten, dan inspiratif membuat proses akademik berjalan lancar hingga lulus tepat waktu. Berbagai kegiatan ilmiah seperti Writing Camp Scopus dan forum diskusi riset memperkaya kapasitas publikasi dan kolaborasi."
+              </p>
+            </div>
+            <div class="testi-author">
+              <div class="author-img">AD</div>
+              <div class="author-info">
+                <strong>Apri Damai Sagita K – Angkatan 2022</strong>
+                <span>Dosen Universitas Sanata Dharma Yogyakarta</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testi-card mahasiswa">
+            <div>
+              <span class="testi-tag" style="background:#FFF9D6;color:#0F5B80">Testimoni Mahasiswa Aktif</span>
+              <p class="testi-quote">
+                "Suasana belajar sangat menyenangkan karena dosennya sangat dekat dengan mahasiswa. Banyak kegiatan pendukung yang membantu dalam menyelesaikan disertasi dan luarannya, seperti Writing Camp Scopus, riset kolaborasi dengan dosen, magang di luar negeri, dan forum diseminasi internasional."
+              </p>
+            </div>
+            <div class="testi-author">
+              <div class="author-img">AS</div>
+              <div class="author-info">
+                <strong>Aldi Dwi Saputra – Angkatan 2024</strong>
+                <span>Mahasiswa Aktif S3 Pendidikan Ekonomi</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div style="margin-top:24px">
+          <article class="testi-card" style="background:linear-gradient(135deg,#075EA7,#0074D6)">
+            <div>
+              <span class="testi-tag" style="background:#0284C7;color:#fff">Prestasi Publikasi Mahasiswa</span>
+              <p class="testi-quote">
+                "Selama menjadi mahasiswa S3 UNS dapat mempublikasikan sebanyak 8 artikel terindeks Scopus baik sebagai penulis pertama, penulis korespondensi maupun penulis bersama."
+              </p>
+            </div>
+            <div class="testi-author">
+              <div class="author-img">AA</div>
+              <div class="author-info">
+                <strong>Adhitya Agri Putra – Angkatan 2021</strong>
+                <span>Mahasiswa Aktif · 8 Artikel Scopus</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Peluang Karir & Fasilitas Section -->
+    <section class="career-facility">
+      <div class="container">
+        <div class="section-title">
+          <h2>Peluang Karir & Fasilitas Unggulan</h2>
+          <div class="title-line"></div>
+          <p>Lulusan Doktor Pendidikan Ekonomi dipersiapkan menjadi pemimpin akademik, konsultan tingkat tinggi, dan penentu kebijakan sektor publik maupun swasta.</p>
+        </div>
+
+        <div class="cf-grid">
+          <!-- Peluang Karir Box -->
+          <div class="cf-box">
+            <h3><span>💼</span> Peluang Karir Lulusan</h3>
+            <div class="cf-items">
+              <div class="cf-item">Dosen / Peneliti Di Perguruan Tinggi Negeri & Swasta</div>
+              <div class="cf-item">Peneliti Utama Lembaga Riset Nasional / Internasional</div>
+              <div class="cf-item">Konsultan Penelitian & Analis Ekonometrika</div>
+              <div class="cf-item">Konsultan Kebijakan Pendidikan & Ekonomi Publik</div>
+              <div class="cf-item">Manajer Strategi Di Sektor Publik Atau Swasta / Perbankan</div>
+            </div>
+          </div>
+
+          <!-- Fasilitas Box -->
+          <div class="cf-box">
+            <h3><span>🏛️</span> Fasilitas & Program Pendukung</h3>
+            <div class="cf-items">
+              <div class="cf-item" style="border-left-color:var(--uns-yellow)">Kesempatan Program Sandwich Ke Perguruan Tinggi Luar Negeri & Beasiswa</div>
+              <div class="cf-item" style="border-left-color:var(--uns-yellow)">Writing Camp Scopus & Pendampingan Publikasi Bereputasi</div>
+              <div class="cf-item" style="border-left-color:var(--uns-yellow)">Ruang Perkuliahan Multimedia Smart Classroom</div>
+              <div class="cf-item" style="border-left-color:var(--uns-yellow)">Akses Perpustakaan Digital & E-Journal Internasional Bereputasi</div>
+              <div class="cf-item" style="border-left-color:var(--uns-yellow)">Laboratorium Pendidikan Ekonomi & Komputasi Data Statistik</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPMB Information Section -->
+    <section id="spmb" class="spmb-info">
+      <div class="container">
+        <div class="section-title">
+          <h2>Informasi Pendaftaran SPMB UNS</h2>
+          <div class="title-line"></div>
+          <p>Panduan alur pendaftaran daring dan persiapan berkas persyaratkan bagi calon mahasiswa Doktoral S3 Pendidikan Ekonomi.</p>
+        </div>
+
+        <div class="spmb-summary">
+          <div class="spmb-stat">
+            <strong>3 Tahun</strong>
+            <span>Rancangan Penyelesaian Studi Doktor (6 SMT)</span>
+          </div>
+          <div class="spmb-stat">
+            <strong>1 Bulan</strong>
+            <span>Rata-Rata Masa Tunggu Kerja Alumni</span>
+          </div>
+          <div class="spmb-stat">
+            <strong>2 Gelombang</strong>
+            <span>Periode Penerimaan (Semester Gasal & Genap)</span>
+          </div>
+        </div>
+
+        <div class="spmb-grid">
+          <!-- Alur Pendaftaran -->
+          <article class="info-card">
+            <h3>Alur Pendaftaran Online</h3>
+            <p>Prosedur pendaftaran terpusat melalui portal resmi SPMB UNS.</p>
+            <div class="flow">
+              <div class="flow-step">
+                <strong>1. Registrasi Akun Pendaftaran</strong>
+                Buka portal SPMB Pascasarjana UNS dan isi formulir pendaftaran awal.
+              </div>
+              <div class="flow-step">
+                <strong>2. Pembayaran Biaya Seleksi</strong>
+                Lakukan pembayaran melalui bank mitra UNS (BNI, Mandiri, BRI, BTN) menggunakan nomor pendaftaran.
+              </div>
+              <div class="flow-step">
+                <strong>3. Unggah Berkas & Proposal Riset</strong>
+                Login kembali untuk mengunggah ijazah, transkrip, sertifikat TPA/TOEFL, rekomendasi, dan draft proposal riset.
+              </div>
+              <div class="flow-step">
+                <strong>4. Verifikasi Panitia SPMB</strong>
+                Panitia melakukan validasi dokumen. Setelah lolos, cetak Kartu Tanda Peserta Ujian.
+              </div>
+              <div class="flow-step">
+                <strong>5. Tahap Seleksi & Wawancara Proposal</strong>
+                Mengikuti ujian wawancara proposal disertasi dengan tim penguji/calon promotor.
+              </div>
+            </div>
+          </article>
+
+          <!-- Berkas Persyaratan -->
+          <article class="info-card">
+            <h3>Persyaratan Berkas Utama</h3>
+            <p>Daftar kelengkapan dokumen yang wajib disiapkan sebelum mendaftar.</p>
+            <div class="requirement-list">
+              <div class="requirement">
+                <strong>Ijazah & Transkrip S2/S1</strong>
+                Minimal IPK 3.00 dari program studi terakreditasi.
+              </div>
+              <div class="requirement">
+                <strong>Sertifikat TPA / TBS</strong>
+                Sertifikat TPA Bappenas/UNS yang masih berlaku.
+              </div>
+              <div class="requirement">
+                <strong>Sertifikat Bahasa Inggris</strong>
+                TOEFL / IELTS / EAP UNS sesuai ambang batas yang ditentukan.
+              </div>
+              <div class="requirement">
+                <strong>2 Surat Rekomendasi</strong>
+                Dari pembimbing Magister atau atasan instansi kerja.
+              </div>
+              <div class="requirement">
+                <strong>Draft Proposal Disertasi</strong>
+                Rancangan riset orisinal bidang Pendidikan Ekonomi.
+              </div>
+              <div class="requirement">
+                <strong>Surat Rekomendasi Promotor</strong>
+                Khusus pendaftar Jalur Penelitian (By Research).
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="official-note">
+          <strong>Catatan Resmi:</strong> Seluruh ketentuan mengenai biaya pendaftaran, jadwal ujian, dan ambang batas nilai mengikuti peraturan resmi panitia SPMB UNS yang berlaku pada gelombang berjalan.
+          <div class="source-links">
+            <a class="mini-link" href="https://spmb.uns.ac.id/jalur-masuk/jenjang?jenjang=s2-s3" target="_blank" rel="noopener">Syarat Pendaftaran S3 SPMB ↗</a>
+            <a class="mini-link" href="https://spmb.uns.ac.id/pendaftar/dashboard/index" target="_blank" rel="noopener">Dashboard SPMB UNS ↗</a>
+            <a class="mini-link" href="https://s3pe.fkip.uns.ac.id/" target="_blank" rel="noopener">Website S3 Pendidikan Ekonomi ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA Banner -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <h2>Siap Mengembangkan Karir Akademik & Gelar Doktor di UNS?</h2>
+            <p>Bergabunglah dengan Program Studi S3 Pendidikan Ekonomi FKIP Universitas Sebelas Maret. Daftarkan diri Anda pada gelombang pendaftaran SPMB yang sedang dibuka!</p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn btn-yellow" href="https://spmb.uns.ac.id/pendaftar/dashboard/index" target="_blank" rel="noopener">DAFTAR SEKARANG →</a>
+            <a class="btn btn-outline" href="https://spmb.uns.ac.id/" target="_blank" rel="noopener">PORTAL SPMB</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- UNS Dark Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-portals">
+        <a class="portal" href="https://uns.ac.id/" target="_blank" rel="noopener">UNS<small>UNIVERSITAS SEBELAS MARET</small></a>
+        <a class="portal" href="https://fkip.uns.ac.id/" target="_blank" rel="noopener">FKIP<small>FAKULTAS KEGURUAN DAN ILMU PENDIDIKAN</small></a>
+        <a class="portal" href="https://spmb.uns.ac.id/" target="_blank" rel="noopener">SPMB<small>PENERIMAAN MAHASISWA BARU</small></a>
+        <a class="portal" href="https://expert.uns.ac.id/" target="_blank" rel="noopener">EXPERT<small>PORTAL KEPAKARAN UNS</small></a>
+        <a class="portal" href="https://s3pe.fkip.uns.ac.id/" target="_blank" rel="noopener">S3PE<small>S3 PENDIDIKAN EKONOMI</small></a>
+      </div>
+
+      <div class="foot-grid">
+        <div>
+          <div class="foot-brand">
+            <div class="foot-mark">UNS</div>
+            <strong>UNIVERSITAS<br>SEBELAS MARET</strong>
+          </div>
+          <div class="foot-text">
+            Program Studi S3 Pendidikan Ekonomi · Pascasarjana Fakultas Keguruan dan Ilmu Pendidikan (FKIP) Universitas Sebelas Maret.
+            <br>Jl. Ir. Sutami 36A Kentingan, Jebres, Surakarta, Jawa Tengah 57126.
+          </div>
+        </div>
+
+        <div>
+          <div class="foot-title">Layanan & Portal</div>
+          <div class="foot-links">
+            <a href="https://spmb.uns.ac.id/" target="_blank" rel="noopener">SPMB UNS Portal</a>
+            <a href="https://expert.uns.ac.id/" target="_blank" rel="noopener">Expert UNS Kepakaran</a>
+            <a href="https://s3pe.fkip.uns.ac.id/" target="_blank" rel="noopener">Website S3 Pend. Ekonomi</a>
+            <a href="https://fkip.uns.ac.id/" target="_blank" rel="noopener">Portal FKIP UNS</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="foot-title">Navigasi Landing</div>
+          <div class="foot-links">
+            <a href="#profil">Profil Program</a>
+            <a href="#core-study">Core Study & Kompetensi</a>
+            <a href="#jalur">Jalur Masuk</a>
+            <a href="#akreditasi">Akreditasi Program</a>
+            <a href="#dosen">Dosen & Kepakaran</a>
+            <a href="#testimoni">Testimoni Alumni</a>
+          </div>
+          <div class="social-links">
+            <a class="social-icon" href="https://instagram.com/s3pe_fkipuns" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+            <a class="social-icon" href="https://s3pe.fkip.uns.ac.id/" target="_blank" rel="noopener" aria-label="Website">🌐</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright">
+        Copyright © 2026 Program Studi S3 Pendidikan Ekonomi FKIP Universitas Sebelas Maret · Landing Page Mockup
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Mobile CTA -->
+  <a class="mobile-cta" href="https://spmb.uns.ac.id/pendaftar/dashboard/index" target="_blank" rel="noopener">
+    DAFTAR S3 PENDIDIKAN EKONOMI →
+  </a>
+
+  <!-- Interactive Logic Script -->
+  <script>
+    // Tab switching logic for Admission Pathways (Jalur Masuk)
+    const buttons = document.querySelectorAll('[data-tab]');
+    const panels = document.querySelectorAll('[data-panel]');
+    buttons.forEach(btn => btn.addEventListener('click', () => {
+      const key = btn.dataset.tab;
+      buttons.forEach(b => {
+        const active = b === btn;
+        b.classList.toggle('active', active);
+        b.setAttribute('aria-selected', String(active));
+      });
+      panels.forEach(p => p.classList.toggle('active', p.dataset.panel === key));
+    }));
+
+    // Interactive Filter for Dosen & Kepakaran
+    const searchInput = document.getElementById('facultySearch');
+    const facultyList = document.getElementById('facultyList');
+    if (searchInput && facultyList) {
+      const facultyCards = facultyList.querySelectorAll('.person');
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        facultyCards.forEach(card => {
+          const text = card.textContent.toLowerCase();
+          if (text.includes(query)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>
