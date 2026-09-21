@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="unsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#008BBE"/>
+      <stop offset="100%" stop-color="#005AA8"/>
+    </linearGradient>
+  </defs>
+  <!-- Background Circle Seal -->
+  <circle cx="250" cy="250" r="236" fill="url(#unsGrad)" stroke="#FFFFFF" stroke-width="14"/>
+  <circle cx="250" cy="250" r="212" fill="none" stroke="#FFDE35" stroke-width="5" stroke-dasharray="10 5"/>
+  
+  <!-- Outer Lotus Halo Rays -->
+  <g fill="#FFDE35" opacity="0.9">
+    <path d="M250 50 L258 75 L242 75 Z"/>
+    <path d="M391 108 L375 128 L363 112 Z"/>
+    <path d="M450 250 L425 258 L425 242 Z"/>
+    <path d="M391 391 L363 387 L375 371 Z"/>
+    <path d="M250 450 L242 425 L258 425 Z"/>
+    <path d="M108 391 L125 371 L137 387 Z"/>
+    <path d="M50 250 L75 242 L75 258 Z"/>
+    <path d="M108 108 L137 112 L125 128 Z"/>
+  </g>
+
+  <!-- Central Flower & Flame Emblem (Bunga Wijayakusuma UNS) -->
+  <g fill="#FFFFFF">
+    <!-- Top Central Petal / Flame -->
+    <path d="M250 85 C272 135 312 165 312 215 C312 255 282 285 250 285 C218 285 188 255 188 215 C188 165 228 135 250 85 Z" fill="#FFDE35"/>
+    <path d="M250 105 C266 145 296 170 296 210 C296 240 276 265 250 265 C224 265 204 240 204 210 C204 170 234 145 250 105 Z" fill="#FFFFFF"/>
+    
+    <!-- Left Wing Petal -->
+    <path d="M188 215 C138 185 98 215 78 265 C118 275 158 265 188 235 Z" fill="#FFDE35"/>
+    <path d="M183 220 C143 195 108 220 93 260 C123 268 156 260 183 237 Z" fill="#FFFFFF"/>
+    
+    <!-- Right Wing Petal -->
+    <path d="M312 215 C362 185 402 215 422 265 C382 275 342 265 312 235 Z" fill="#FFDE35"/>
+    <path d="M317 220 C357 195 392 220 407 260 C377 268 344 260 317 237 Z" fill="#FFFFFF"/>
+    
+    <!-- Lower Petals Base -->
+    <path d="M250 285 C295 285 345 325 355 375 C305 365 275 345 250 315 C225 345 195 365 145 375 C155 325 205 285 250 285 Z" fill="#FFDE35"/>
+    <path d="M250 295 C285 295 330 330 338 370 C298 360 272 342 250 318 C228 342 202 360 162 370 C170 330 215 295 250 295 Z" fill="#FFFFFF"/>
+  </g>
+  
+  <!-- UNS Text Typography Seal -->
+  <text x="250" y="425" font-family="'Plus Jakarta Sans', 'Arial Black', sans-serif" font-size="62" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="3">UNS</text>
+</svg>

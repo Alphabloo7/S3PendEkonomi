@@ -71,11 +71,14 @@
     .header-main{height:80px;display:flex;align-items:center;justify-content:space-between;gap:20px}
     .brand{display:flex;align-items:center;gap:14px;min-width:0}
     .logo-box{
-      width:52px;height:52px;border:2px solid rgba(255,255,255,.85);border-radius:50%;
-      display:grid;place-items:center;font-weight:900;font-size:16px;letter-spacing:-1px;flex:0 0 auto;
-      background:rgba(255,255,255,.1);
-      box-shadow:0 4px 12px rgba(0,0,0,.15);
+      width:52px;height:52px;border:2px solid #ffffff;border-radius:50%;
+      display:grid;place-items:center;flex:0 0 auto;
+      background:#ffffff;
+      box-shadow:0 4px 12px rgba(0,0,0,.18);
+      overflow:hidden;padding:4px;
     }
+    .logo-img{width:100%;height:100%;object-fit:contain;display:block}
+    .logo-img-foot{width:100%;height:100%;object-fit:contain;display:block}
     .brand-copy{min-width:0}
     .brand-copy strong{display:block;font-size:16px;line-height:1.15;letter-spacing:.01em;font-weight:800}
     .brand-copy span{display:block;font-size:11px;opacity:.92;margin-top:3px}
@@ -358,7 +361,7 @@
     .portal{font-size:20px;font-weight:950;color:#F5F5F5;letter-spacing:-.02em;transition:.15s ease}.portal:hover{color:var(--uns-yellow)}
     .portal small{display:block;font-size:8.5px;color:#A0AEC0;margin-top:3px;letter-spacing:.04em;font-weight:600}
     .foot-grid{display:grid;grid-template-columns:1.4fr .8fr .8fr;gap:48px;padding:36px 0 24px}
-    .foot-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px}.foot-mark{width:50px;height:50px;border:2px solid #fff;border-radius:50%;display:grid;place-items:center;font-weight:950;font-size:16px}.foot-brand strong{font-size:18px;line-height:1.1;font-weight:800}.foot-text{font-size:10.5px;color:#CBD5E0;max-width:440px;line-height:1.6}.foot-title{font-size:13px;font-weight:900;margin-bottom:12px;color:var(--uns-yellow)}.foot-links{display:grid;gap:8px;font-size:11px;color:#E2E8F0}.foot-links a:hover{color:var(--uns-yellow)}
+    .foot-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px}.foot-mark{width:50px;height:50px;border:2px solid #fff;border-radius:50%;display:grid;place-items:center;overflow:hidden;padding:4px;background:#ffffff;flex:0 0 auto}
     .social-links{display:flex;gap:10px;margin-top:14px}
     .social-icon{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.1);display:grid;place-items:center;font-size:12px;color:#fff;transition:.15s ease}
     .social-icon:hover{background:var(--uns-yellow);color:#142B3B}
@@ -454,7 +457,9 @@
   <header class="site-header">
     <div class="container header-main">
       <a class="brand" href="#top" aria-label="Pascasarjana FKIP UNS">
-        <div class="logo-box">UNS</div>
+        <div class="logo-box">
+          <img src="logounsnobg.png" alt="Logo UNS" class="logo-img">
+        </div>
         <div class="brand-copy">
           <strong>PASCASARJANA FKIP UNS</strong>
           <span>Universitas Sebelas Maret · Surakarta</span>
@@ -616,7 +621,7 @@
               <div class="accredit-row"><span>Program Unggulan</span><strong>Scopus Writing Camp & International Sandwich Program</strong></div>
             </div>
             <div class="accredit-actions">
-              <a class="btn btn-blue" href="https://akademik.fkip.uns.ac.id/akreditasi/" target="_blank" rel="noopener">AKREDITASI FKIP UNS ↗</a>
+              <a class="btn btn-blue" href="https://akademik.fkip.uns.ac.id/s3-pendidikan-ekonomi/" target="_blank" rel="noopener">AKREDITASI FKIP UNS ↗</a>
               <a class="mini-link" href="https://layanan-lppmp.uns.ac.id/akreditasi/prodi/s-3-pendidikan-ekonomi" target="_blank" rel="noopener">Detail sertifikat UNS ↗</a>
             </div>
           </article>
@@ -1104,7 +1109,9 @@
       <div class="foot-grid">
         <div>
           <div class="foot-brand">
-            <div class="foot-mark">UNS</div>
+            <div class="foot-mark">
+              <img src="logounsnobg.png" alt="Logo UNS" class="logo-img-foot">
+            </div>
             <strong>UNIVERSITAS<br>SEBELAS MARET</strong>
           </div>
           <div class="foot-text">
