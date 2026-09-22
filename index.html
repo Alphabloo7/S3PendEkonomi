@@ -69,14 +69,10 @@
       z-index:10;
     }
     .header-main{height:76px;display:flex;align-items:center;justify-content:space-between;gap:28px}
-    .brand{display:flex;align-items:center;gap:14px;min-width:0}
-    .logo-box{
-      width:54px;height:54px;padding:4px;border-radius:50%;background:#ffffff;
-      display:grid;place-items:center;flex:0 0 auto;
-      box-shadow:0 2px 8px rgba(0,40,90,.18);
-      overflow:hidden;
-    }
-    .logo-img{width:100%;height:100%;object-fit:contain;display:block}
+    .brand{display:flex;align-items:center;gap:16px;min-width:0}
+    .brand-logo{height:48px;width:auto;object-fit:contain;display:block;flex:0 0 auto}
+    .brand-logo--dikti{height:42px}
+    .brand-divider{width:1px;align-self:stretch;margin:6px 0;background:rgba(255,255,255,.32);flex:0 0 auto}
     .brand-copy{min-width:0}
     .brand-copy strong{display:block;font-size:16px;line-height:1.15;letter-spacing:.01em;font-weight:800}
     .brand-copy span{display:block;font-size:11px;opacity:.92;margin-top:3px}
@@ -323,13 +319,9 @@
     .portal{font-size:20px;font-weight:950;color:#F5F5F5;letter-spacing:-.02em;transition:.15s ease}.portal:hover{color:var(--uns-yellow)}
     .portal small{display:block;font-size:8px;color:#AFAFAF;margin-top:3px;letter-spacing:.04em;font-weight:600}
     .foot-grid{display:grid;grid-template-columns:1.35fr .7fr .7fr;gap:52px;padding:34px 0 22px}
-    .foot-brand{display:flex;align-items:center;gap:12px;margin-bottom:13px}
-    .foot-mark{width:50px;height:50px;padding:4px;border-radius:50%;background:#ffffff;object-fit:contain;display:grid;place-items:center;overflow:hidden;flex:0 0 auto}
-    .logo-img-foot{width:100%;height:100%;object-fit:contain;display:block}
+    .foot-brand{margin-bottom:13px}
+    .logo-img-foot{height:60px;width:auto;object-fit:contain;display:block}
     .foot-brand strong{font-size:19px;line-height:1.05;font-weight:800}.foot-text{font-size:10px;color:#C5C5C5;max-width:440px;line-height:1.6}.foot-title{font-size:12px;font-weight:900;margin-bottom:9px;color:var(--uns-yellow)}.foot-links{display:grid;gap:6px;font-size:10px;color:#D0D0D0}.foot-links a:hover{color:var(--uns-yellow)}
-    .social-links{display:flex;gap:10px;margin-top:14px}
-    .social-icon{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.1);display:grid;place-items:center;font-size:12px;color:#fff;transition:.15s ease}
-    .social-icon:hover{background:var(--uns-yellow);color:#142B3B}
     .copyright{text-align:center;border-top:1px solid #343434;padding-top:16px;font-size:9px;color:#BEBEBE}
 
     .mobile-cta{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:100;background:var(--uns-yellow);color:#17364B;border-radius:6px;padding:12px 16px;text-align:center;font-weight:950;box-shadow:0 13px 35px rgba(0,0,0,.24)}
@@ -359,7 +351,7 @@
     @media(max-width:640px){
       .container{width:min(calc(100% - 24px),var(--max))}.utility-right{display:none}.utility-left{gap:10px}
       .dikti-badge{display:none}
-      .header-main{height:68px;gap:12px}.header-search{display:none}.brand-copy strong{font-size:13.5px}.brand-copy span{font-size:9.5px}.logo-box{width:44px;height:44px;padding:4px}
+      .header-main{height:68px;gap:12px}.header-search{display:none}.brand-copy strong{font-size:13.5px}.brand-copy span{font-size:9.5px}.brand{gap:10px}.brand-logo{height:30px}.brand-logo--dikti{height:26px}
       .program-name{font-size:11.5px}.nav-cta{font-size:10px;padding:6px 12px}
       .hero-inner{padding:44px 0 54px}.hero h1{font-size:34px}.hero p{font-size:14.5px}.hero-actions{display:grid;width:100%}.btn{width:100%}
       .accredit-row{grid-template-columns:1fr;gap:3px}.accredit-period{grid-template-columns:1fr}
@@ -398,9 +390,9 @@
   <header class="site-header">
     <div class="container header-main">
       <a class="brand" href="#top" aria-label="Pascasarjana FKIP UNS">
-        <div class="logo-box">
-          <img src="logounsnobg.png" alt="Logo Universitas Sebelas Maret" class="logo-img" />
-        </div>
+        <img src="logo-uns.png" alt="Logo Universitas Sebelas Maret" class="brand-logo brand-logo--uns" />
+        <img src="logo-diktisaintek.png" alt="Logo Diktisaintek Berdampak" class="brand-logo brand-logo--dikti" />
+        <span class="brand-divider" aria-hidden="true"></span>
         <div class="brand-copy">
           <strong>PASCASARJANA FKIP UNS</strong>
           <span>Universitas Sebelas Maret · Surakarta</span>
@@ -1060,10 +1052,7 @@
       <div class="foot-grid">
         <div>
           <div class="foot-brand">
-            <div class="foot-mark">
-              <img src="logounsnobg.png" alt="Logo Universitas Sebelas Maret" class="logo-img-foot" />
-            </div>
-            <strong>UNIVERSITAS<br>SEBELAS MARET</strong>
+            <img src="logo-uns.png" alt="Logo Universitas Sebelas Maret" class="logo-img-foot" />
           </div>
           <div class="foot-text">
             Program Studi S3 Pendidikan Ekonomi · Pascasarjana Fakultas Keguruan dan Ilmu Pendidikan (FKIP) Universitas Sebelas Maret.
@@ -1091,15 +1080,11 @@
             <a href="#dosen">Dosen & Kepakaran</a>
             <a href="#testimoni">Testimoni Alumni</a>
           </div>
-          <div class="social-links">
-            <a class="social-icon" href="https://instagram.com/s3pe_fkipuns" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
-            <a class="social-icon" href="https://s3pe.fkip.uns.ac.id/" target="_blank" rel="noopener" aria-label="Website">🌐</a>
-          </div>
         </div>
       </div>
 
       <div class="copyright">
-        Copyright © 2026 Program Studi S3 Pendidikan Ekonomi FKIP Universitas Sebelas Maret · Landing Page Mockup
+        Copyright © 2026 Pascasarjana FKIP Universitas Sebelas Maret
       </div>
     </div>
   </footer>
